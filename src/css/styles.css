@@ -131,6 +131,7 @@ ol {
 }
 
 .loader {
+  display: flex;
   width: 64px;
   height: 48px;
   position: relative;
