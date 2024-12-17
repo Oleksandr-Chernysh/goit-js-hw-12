@@ -24,6 +24,7 @@ loadBtn.addEventListener('click', handleLoadMore);
 
 function handleImages(event) {
   event.preventDefault();
+  page = 1;
   value = event.target.elements.search.value.trim();
   console.log(value);
   gallery.innerHTML = '';
@@ -83,7 +84,7 @@ function handleImages(event) {
 }
 async function handleLoadMore() {
   page += 1;
-  loadBtn.disabled = true;
+  loadBtn.classList.add('hidden');
   loader.classList.remove('hidden');
   try {
     const { hits, totalHits } = await searchImage(value, page, per_page);
@@ -97,6 +98,8 @@ async function handleLoadMore() {
         position: 'center',
         color: 'red',
       });
+    } else {
+      loadBtn.classList.remove('hidden');
     }
     setTimeout(() => {
       const item = document.querySelector('.list-item');
