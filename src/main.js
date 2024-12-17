@@ -28,6 +28,7 @@ function handleImages(event) {
   console.log(value);
   gallery.innerHTML = '';
   loader.innerHTML = '';
+  loadBtn.classList.add('hidden');
   if (!value) {
     {
       iziToast.show({
@@ -54,6 +55,7 @@ function handleImages(event) {
           color: 'red',
         });
         loader.innerHTML = '<h1>Error..</h1>';
+        loadBtn.classList.add('hidden');
       } else {
         console.log(hits);
 
