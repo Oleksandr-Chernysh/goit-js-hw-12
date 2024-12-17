@@ -96,7 +96,7 @@ ol {
 
 .gallery {
   display: flex;
-  gap: 24px;
+  gap: 23px;
   flex-wrap: wrap;
   justify-content: center;
 }
