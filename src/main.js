@@ -62,10 +62,10 @@ function handleImages(event) {
 
         gallery.innerHTML = makeImages(hits);
         litebox.refresh();
-        if (page === totalPage) {
-          loadBtn.classList.replace('load-btn', 'hidden');
+        if (totalPage === 1) {
+          loadBtn.classList.add('hidden');
         } else {
-          loadBtn.classList.replace('hidden', 'load-btn');
+          loadBtn.classList.remove('hidden');
         }
       }
     })
@@ -92,7 +92,7 @@ async function handleLoadMore() {
     gallery.insertAdjacentHTML('beforeend', makeImages(hits));
     totalPage = Math.ceil(totalHits / per_page);
     if (page > totalPage) {
-      loadBtn.classList.replace('load-btn', 'hidden');
+      loadBtn.classList.add('hidden');
       iziToast.show({
         message: "We're sorry, but you've reached the end of search results.",
         position: 'center',
